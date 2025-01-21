@@ -1,0 +1,32 @@
+{
+  "name": "calculator-web-app",
+  "version": "1.0.0",
+  "description": "A calculator web application with nodejs api",
+  "scripts": {
+    "start": "npm run open",
+    "start-web": "npm start --prefix web",
+    "start-api": "npm start --prefix api",
+    "open": "concurrently \"npm:start-web\" \"npm:start-api\"",
+    "postinstall": "concurrently \"npm:install-web\" \"npm:install-api\"",
+    "install-web": "cd web && npm install",
+    "install-api": "cd api && npm install"
+  },
+  "keywords": [
+    "nodejs",
+    "calculator",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.web.fh-kufstein.ac.at:gunharth/calculator.git"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
